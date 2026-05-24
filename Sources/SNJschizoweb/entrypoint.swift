@@ -3,10 +3,8 @@ import Logging
 import NIOCore
 import NIOPosix
 
-@main
-enum Entrypoint {
-    static func main() async throws {
-        var env = try Environment.detect()
+public func main() async throws {
+    	var env = try Environment(name: "production", arguments: ["vapor"])
         try LoggingSystem.bootstrap(from: &env)
         
         let app = try await Application.make(env)
@@ -28,4 +26,3 @@ enum Entrypoint {
         }
         try await app.asyncShutdown()
     }
-}
