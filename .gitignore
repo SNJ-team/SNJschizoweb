@@ -1,5 +1,4 @@
 Packages
-.build
 xcuserdata
 *.xcodeproj
 DerivedData/
@@ -10,3 +9,6 @@ db.sqlite
 .env.*
 !.env.example
 default.profraw
+.build/
+build/
+*.html
