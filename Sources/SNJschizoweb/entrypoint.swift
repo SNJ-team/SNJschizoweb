@@ -4,7 +4,7 @@ import NIOCore
 import NIOPosix
 
 public func main() async throws {
-    	var env = try Environment(name: "production", arguments: ["vapor"])
+    	var env = Environment(name: "production", arguments: ["vapor"])
         try LoggingSystem.bootstrap(from: &env)
         
         let app = try await Application.make(env)

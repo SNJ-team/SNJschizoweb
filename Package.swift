@@ -30,10 +30,18 @@ let package = Package(
                 .product(name: "NIOPosix", package: "swift-nio"),
                 .product(name: "SwiftJava", package: "swift-java"),
                 .product(name: "SwiftRuntimeFunctions", package: "swift-java"),
+                .target(name: "PaperAPI")
             ],
             swiftSettings: [
                 .swiftLanguageMode(.v5)
             ]
+        ),
+        .target(
+            name: "PaperAPI",
+            dependencies: [
+                .product(name: "SwiftJava", package: "swift-java"),
+            ],
+            exclude: ["swift-java.config"]
         ),
         .testTarget(
             name: "SNJschizowebTests",
